@@ -118,5 +118,5 @@ function addToTheCart(event){
 
   // change the cart items no.
   let cartItemNo = document.getElementById('itemCount');
-  cartItemNo.textContent = counter;
+  cartItemNo.textContent = `(${counter})`;
 }

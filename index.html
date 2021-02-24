@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Akaya+Telivigala&family=Balsamiq+Sans:ital,wght@1,700&family=Bebas+Neue&family=Changa:wght@500&family=Josefin+Sans:ital,wght@1,500&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Akaya+Telivigala&family=Balsamiq+Sans:ital,wght@1,700&family=Changa:wght@500&family=Josefin+Sans:ital,wght@1,500&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Akaya+Telivigala&family=Balsamiq+Sans:ital,wght@1,700&family=Josefin+Sans:ital,wght@1,500&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@1,500&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Oi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Lobster&family=Oi&family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Balsamiq+Sans:ital,wght@1,700&family=Josefin+Sans:ital,wght@1,500&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Lobster&family=Oi&display=swap" rel="stylesheet">
+
     <title>Bus Mall Store</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -8,7 +19,7 @@
 
   <body>
     <header>
-      <h1>Bus Mall Store</h1>
+      <h1 class="bus">Bus Mall Store</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -21,16 +32,16 @@
       <section class="deck col-1">
         <div class="card">
           <header>
-            <h1>Shop Our Catalog</h1>
+            <h1 class="shop">Shop Our Catalog</h1>
           </header>
           <div class="copy">
             <ol>
-              <li>
+              <li class="para">
                 Select an item from our catalog and indicate how many you would like to
                 purchase.
               </li>
-              <li>Once you've made your selection, click the "Add to Cart" button</li>
-              <li>
+              <li class="para">Once you've made your selection, click the "Add to Cart" button</li>
+              <li class="para">
                 When you are ready to purchase, click the "Cart" link above to view your
                 cart and check out
               </li>
@@ -44,16 +55,16 @@
           <div class="copy">
             <form id="catalog">
               <fieldset>
-                <legend>Catalog</legend>
+                <legend id="we" >Catalog</legend>
                 <label>
-                  <span>Item</span>
+                  <span class="me">Item</span>
                   <select id="items"></select>
                 </label>
                 <label>
-                  <span>Quantity</span>
-                  <input id="quantity" type="number" />
+                  <span class="me">Quantity</span>
+                  <input  id="quantity" type="number" />
                 </label>
-                <input type="submit" value="Add To Cart" />
+                <input id="btn" type="submit" value="Add To Cart" />
               </fieldset>
             </form>
           </div>
