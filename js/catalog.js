@@ -1,4 +1,4 @@
-/* global Product, Cart */
+// global Product, Cart 
 
 'use strict';
 

@@ -10,7 +10,7 @@ Cart.prototype.addItem = function (product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
    let newItem  = new CartItem(product,quantity);
    this.items.push(newItem);
-
+   this.saveToLocalStorage();
 };
 
 Cart.prototype.saveToLocalStorage = function () {
@@ -35,6 +35,7 @@ Cart.prototype.removeItem = function (item) {
   for (let i = 0; i <= j; j++){
     this.items.push(modifiedItems[j]);
   }
+  this.saveToLocalStorage();
 };
 
 const CartItem = function (product, quantity) {
@@ -76,12 +77,46 @@ function generateCatalog() {
 // Initialize the app by creating the big list of products with images and names
 
 generateCatalog();
+// creating a new cart
 let cart = new Cart();
-let selectItem = document.getElementById('items')
+
+// creating the list
+let selectItem = document.getElementById('items');
 for (let i = 0; i < Product.allProducts.length; i++){
   let option = document.createElement("option");
   selectItem.appendChild(option);
   option.text = Product.allProducts[i].name;
 }
-let btu = document.getElementById('submit')
-btu.addEventListener('click',Cart.prototype.addItem)
+// getting the all input elements 
+let allInput = document.querySelectorAll("input");
+
+// getting the button input and clicking counter 
+let btu = allInput[1];
+let counter = 0;
+
+// adding a listener to the button and adding items to the cart
+let index;
+btu.addEventListener('click',addToTheCart);
+function addToTheCart(event){
+  event.preventDefault();
+  counter++;
+
+  // get the select list text
+  let item = selectItem.options[selectItem.selectedIndex].text;
+
+  // get the quantity number from the input
+  let quantityNo = document.getElementById('quantity').value;
+
+  // adding proudct object to the cart
+  for (let i = 0; i < Product.allProducts.length; i++){
+    if (Product.allProducts[i].name === item){
+      index = i;
+      break;
+    }
+  }
+  cart.addItem(Product.allProducts[index],quantityNo);
+
+  // change the cart items no.
+  let cartItemNo = document.getElementById('itemCount');
+  cartItemNo.textContent = counter;
+}
