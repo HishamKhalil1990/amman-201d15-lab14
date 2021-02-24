@@ -1,9 +1,9 @@
 'use strict';
 
 // Cart constructor.
-const Cart = function (items) {
+const Cart = function () {
   // this.items is an array of CartItem instances.
-  this.items = items;
+  this.items = [];
 };
 
 Cart.prototype.addItem = function (product, quantity) {
@@ -21,6 +21,20 @@ Cart.prototype.saveToLocalStorage = function () {
 Cart.prototype.removeItem = function (item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  let modifiedItems = [];
+  let j = 0;
+  for (let i = 0; i < this.items.length; i++){
+    if (this.items[i].product.name === item){
+
+    } else {
+      modifiedItems[j] = items[i];
+      j++;
+    }
+  }
+  this.items = [];
+  for (let i = 0; i <= j; j++){
+    this.items.push(modifiedItems[j]);
+  }
 };
 
 const CartItem = function (product, quantity) {
@@ -60,4 +74,14 @@ function generateCatalog() {
 }
 
 // Initialize the app by creating the big list of products with images and names
+
 generateCatalog();
+let cart = new Cart();
+let selectItem = document.getElementById('items')
+for (let i = 0; i < Product.allProducts.length; i++){
+  let option = document.createElement("option");
+  selectItem.appendChild(option);
+  option.text = Product.allProducts[i].name;
+}
+let btu = document.getElementById('submit')
+btu.addEventListener('click',Cart.prototype.addItem)
