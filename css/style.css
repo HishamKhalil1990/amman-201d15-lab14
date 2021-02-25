@@ -67,3 +67,11 @@ footer{
 
 }
 
+#cart {
+    text-align: center;
+    height: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: gray;
+    color: white;
+}
