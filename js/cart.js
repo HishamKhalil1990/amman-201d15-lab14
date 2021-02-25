@@ -20,11 +20,13 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
   let tbody = document.querySelector('tbody');
-  let tfoot = document.querySelector('foot');
+  let tfoot = document.querySelector('tfoot');
   if (tbody.firstChild !== null){
     while(tbody.firstChild){
       tbody.removeChild(tbody.firstChild);
     }
+  }
+  if (tfoot.firstChild !== null){
     while(tfoot.firstChild){
       tfoot.removeChild(tfoot.firstChild);
     }
